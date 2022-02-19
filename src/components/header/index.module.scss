@@ -1,0 +1,49 @@
+.header {
+    display: grid;
+    grid-template-rows: repeat(2, 6rem);
+    z-index: 2;
+
+    &__icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color-white, $alpha: 0.45);
+        backdrop-filter: saturate(180%) blur(5px);
+        
+        & a:not(:last-child) {
+            margin-right: 3vw;
+        }
+
+        & a:hover {
+            color: $color-p;
+            transition: $transition;
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: $font-size-medium;
+        background-color: rgba($color-white, $alpha: 0.6);
+        backdrop-filter: saturate(180%) blur(5px);
+
+        & a:not(:last-child) {
+            margin-right: 6vw;
+        }
+
+        & *:hover {
+            color: $color-p-d;
+            transition: $transition;
+            cursor: pointer;
+        }
+    }
+}
+
+#icon-up {
+    top: 0;
+    position: fixed;
+    color: inherit;
+    width: inherit;
+}

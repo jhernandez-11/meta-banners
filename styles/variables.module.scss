@@ -1,0 +1,53 @@
+//////////// colors
+$color-grey-light: #e1e1e1;
+$color-grey: #959595;
+$color-grey-dark: #555555;
+
+$color-black: #000;
+$color-white: #fff;
+
+$color-gradient-gb: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(190,190,190,1) 100%);
+
+$color-p: #0091ea;
+$color-p-d: #0064b7;
+$color-p-l: #64c1ff;
+$color-s: #f6ff00;
+$color-s-d: #bfcc00;
+$color-s-l: #ffff59;
+//////////// typography
+
+$font-size-xsmall: 1.2rem;
+$font-size-small: 1.8rem;
+$font-size-medium: 2.1rem;
+$font-size-large: 3.6rem;
+$font-size-xlarge: 4.5rem;
+$font-size-xxlarge: 5.4rem;
+
+$font-family-ichi: 'Ubuntu', sans-serif;
+$font-family-ni: 'Codystar', cursive;
+$font-family-san: 'Press Start 2P', cursive;
+
+
+//////////// mixins
+
+// 1em = 16px
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };     //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };    //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };    //1800
+    }
+}
+
+//////////// other 
+
+$box-shadow: 1rem 1rem 1rem $color-black;
+$transition: .25s ease-in-out;
