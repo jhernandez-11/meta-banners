@@ -1,0 +1,51 @@
+.pageTwo {
+    display: grid;
+    grid-template-rows: repeat(2, max-content) 6rem;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba($color-black, .6);
+    z-index: 1;
+    width: 100vw;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 100vw;
+        height: 15rem;
+        box-shadow: 0 -45px 42px 0 rgb(0 0 0 / 60%);
+        position: absolute;
+        top: 0;
+        
+    }
+
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        background: linear-gradient(90deg, $color-p-l, $color-s-l);
+        background-clip: text;
+        font-size: $font-size-2xlarge;
+        font-weight: 700;
+        color: transparent;
+        margin: 3rem 0;
+    }
+
+    &__banners {
+        color: $color-white;
+        margin: 1.5rem 0;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+
+        font-size: $font-size-medium;
+        color: $color-white;
+
+        & p {
+            margin-left: 1.5rem;
+        }
+    }
+}

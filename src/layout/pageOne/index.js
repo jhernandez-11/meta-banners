@@ -9,10 +9,11 @@ let randomColor = randomColors[randomNumber];
 
 class PageOne extends Component {
     state = {
-        passPageTwo: false
+        load: true
     }
 
     componentDidMount() {
+        $('#up').hide('slow')
         anime({
             targets: '#ib p',
             color: randomColor,
@@ -39,13 +40,13 @@ class PageOne extends Component {
     page(pageId) {
         if (typeof window !== 'undefined') {
             let page = document.querySelector(`#page${pageId}`);
-            page.scrollIntoView({behavior: "smooth"})
+            page.scrollIntoView({behavior: "smooth"});
         }
     }
 
-    pageIcon() {
+    topPage() {
         if (typeof window !== 'undefined') {
-            
+            $("html, body").velocity({ scrollTop: 0 }, "slow");
         }
     }
 
@@ -57,12 +58,22 @@ class PageOne extends Component {
                 }
             });
 
-            $(window).on('load scroll', function () {
+            $(window).on('load scroll', () => {
                 let sc = $(window).scrollTop();
                 $('#ib').css({
                     'transform': 'translateY(' + sc / 8 + 'px)'
                   });
             });
+
+            $(window).on('load scroll', () => {
+                let position = window.scrollY
+                let viewHeight = window.innerHeight
+                if (position >= viewHeight) {
+                    $('#up').show('slow')
+                } else {
+                    $('#up').hide('slow')
+                }
+            })
         }
 
         
@@ -96,7 +107,7 @@ class PageOne extends Component {
                         <ion-icon name="caret-down-outline" id='d-icon'></ion-icon>                    
                     </div>
                 </div>
-                <div className={styles.upIcon} id='up'>
+                <div className={styles.upIcon} id='up' onClick={this.topPage}>
                     <ion-icon name="arrow-up-circle-outline"></ion-icon>
                 </div>
             </div>
