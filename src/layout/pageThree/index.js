@@ -4,43 +4,48 @@ import styles from './index.module.scss'
 const pageThree = (props) => {
     const animateColor = () => {
         if (typeof window !== 'undefined') {
-            const startOne = () => {
-                anime({
-                    targets: '#rocket',
-                    keyframes: [
-                        {color: '#64c1ff'},
-                        {color: '#fff'}
-                    ],
-                    duration: 3000,
-                    complete: () => startTwo()
-                })
-            }
-            
-            const startTwo = () => {
-                anime({
-                    targets: '#site',
-                    keyframes: [
-                        {color: '#64c1ff'},
-                        {color: '#fff'}
-                    ],
-                    duration: 3000,
-                    complete: () => startThree()
-                })
-            }
+            $(window).on('load scroll', () => {
+                $(window).on('load scroll', () => {
+                    let position = window.scrollY
+                    let viewHeight = window.innerHeight
 
-            const startThree = () => {
-                anime({
-                    targets: '#spark',
-                    keyframes: [
-                        {color: '#64c1ff'},
-                        {color: '#fff'}
-                    ],
-                    duration: 3000,
-                    complete: () => startOne()
-                })
-            }
+                    if (position > (viewHeight * 1.8)) {
+                        anime({
+                            targets: '#rocket',
+                            opacity: 1,
+                        })
+                    }
+                    
+                    if (position > (viewHeight * 1.9)) {
+                        anime({
+                            targets: '#site',
+                            opacity: 1,
+                        })
+                    }
 
-            startOne()
+                    if (position > (viewHeight * 2)) {
+                        anime({
+                            targets: '#spark',
+                            opacity: 1,
+                        })
+                    }
+                })
+            });
+        }
+
+        if (typeof window !== 'undefined') {
+            anime({
+                targets: '#border',
+                keyframes: [
+                    {width: '90%'},
+                    {width: '75%'},
+                    {width: '81%'},
+                    {width: '60%'},
+                    {width: '87%'}
+                  ],
+                  loop: true,
+                  duration: 6000
+            })
         }
     }
 
@@ -49,29 +54,19 @@ const pageThree = (props) => {
     return (
         <div id='pageThree' className={styles.pageThree}>
             <div className={styles.pageThree__icons}>
-                <div className={styles.pageThree__icons__icon1} id='rocket'>
-                    <ion-icon name="rocket-outline"></ion-icon>
+                <div className={styles.pageThree__icons__icon} id='rocket'>
+                    <p className={styles.pageThree__icons__icon__text}>Jan. 2022 - Production starts for conceptual art. <br /> Official season one banners begin rollout.</p>
+                    <div id='border' className={styles.pageThree__icons__icon__border}></div>
                 </div>
-
-                <p className={styles.pageThree__text1}>Project Launched</p>
-
-                <div className={styles.pageThree__icons__icon2}>
-                    <ion-icon name="return-down-forward-outline"></ion-icon>
+                
+                <div className={styles.pageThree__icons__icon2} id='site'>
+                    <br />
+                    <div id='border' className={styles.pageThree__icons__icon__border}></div>
+                    <p className={styles.pageThree__icons__icon__text}>Feb. 2022 - Front-end development and UI for website begin. <br /> Season one banners continue production.</p>
                 </div>
-                <div className={styles.pageThree__icons__icon3} id='site'>
-                    <ion-icon name="browsers-outline"></ion-icon>
-                </div>
-
-                <p className={styles.pageThree__text2}>Website Initiated</p>
-
-                <div className={styles.pageThree__icons__icon4}>
-                    <ion-icon name="return-down-forward-outline"></ion-icon>
-                </div>
-
-                <p className={styles.pageThree__text3}>Listed on Opensea</p>
-
-                <div className={styles.pageThree__icons__icon5} id='spark'>
-                    <ion-icon name="sparkles-outline"></ion-icon>                
+                <div className={styles.pageThree__icons__icon} id='spark'>
+                    <p className={styles.pageThree__icons__icon__text}>Mar. 2022 - Website complete, listed on Opensea. <br /> Starting sales of banners for season one.</p>    
+                    <div id='border' className={styles.pageThree__icons__icon__border}></div>
                 </div>
             </div>
         </div>

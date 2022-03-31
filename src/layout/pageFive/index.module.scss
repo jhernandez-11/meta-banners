@@ -1,0 +1,45 @@
+.pageFive {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba($color-black, .6);
+    z-index: 1;
+
+    &__textContainer {
+        margin: 0 3rem;
+        text-align: justify;
+        width: 50%;
+
+        &__heading {
+            font-size: $font-size-large;
+            color: $color-white;
+
+            &__span {
+                @include gradient-text-red;
+                font-weight: 700;
+            }
+            
+        }
+        
+    }
+
+    &__profileContainer {
+        width: 30rem;
+        height: 30rem;
+        background: $color-gradient-gb;
+        border-radius: 50%;
+        padding: 3rem;
+
+        background-color: rgba($color-black, $alpha: 0.75);
+        backdrop-filter: saturate(180%) blur(5px);
+        box-shadow: 0rem 0rem 1.5rem 0.6rem rgba(cornsilk, .45);
+
+        & img {
+            border-radius: 50%;
+        }
+    }
+}

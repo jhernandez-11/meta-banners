@@ -13,6 +13,10 @@ import PageSix from '../src/layout/pageSix/index'
 export default function Home() {
   return (
     <React.Fragment>
+      <Head> 
+        <link rel="shortcut icon" type='image/png' href='/meta-banners_logo.png'></link>
+        <title>Meta Banners</title>
+      </Head>
       <LayoutOne>
         <PageOne />
         <PageTwo />

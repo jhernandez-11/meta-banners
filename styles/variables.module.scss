@@ -6,7 +6,7 @@ $color-grey-dark: #555555;
 $color-black: #000;
 $color-white: #fff;
 
-$color-gradient-gb: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(190,190,190,1) 100%);
+$color-gradient-gb: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(190,190,190,1) 100%);
 
 $color-p: #0091ea;
 $color-p-d: #0064b7;
@@ -14,6 +14,10 @@ $color-p-l: #64c1ff;
 $color-s: #f6ff00;
 $color-s-d: #bfcc00;
 $color-s-l: #ffff59;
+$color-t: #ED1202;
+$color-t-d: #6E2722;
+$color-t-l: #F0554A;
+
 //////////// typography
 
 $font-size-xsmall: 1.2rem;
@@ -52,3 +56,17 @@ $font-family-san: 'Press Start 2P', cursive;
 
 $box-shadow: 1rem 1rem 1rem $color-black;
 $transition: .25s ease-in-out;
+
+//////////// mixins
+
+@mixin gradient-text {
+    background: linear-gradient(90deg, $color-p-l, $color-s-l);
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient-text-red {
+    background: linear-gradient(90deg, $color-t-l, $color-t, $color-t-d);
+    background-clip: text;
+    color: transparent;
+}

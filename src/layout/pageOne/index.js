@@ -3,20 +3,22 @@ import HeaderOne from '../../components/header/index'
 import anime from 'animejs/lib/anime';
 import { Component } from 'react/cjs/react.production.min';
 
-let randomColors = ['#bfcc00', '#f6ff00', '#ffff59'];
-let randomNumber = Math.floor(Math.random() * 3);
-let randomColor = randomColors[randomNumber];
-
 class PageOne extends Component {
     state = {
         load: true
     }
 
     componentDidMount() {
+        jQuery.extend(jQuery.easing, {
+            easeOutQuart: function (x, t, b, c, d) {
+              return -c * ((t = t / d - 1) * t * t * t - 1) + b;
+            }
+        });
+
         $('#up').hide('slow')
         anime({
             targets: '#ib p',
-            color: randomColor,
+            color: '#ffff59',
             duration: 3000,
             delay: anime.stagger(200, {grid: [11, 1], from: 'center'}),
             easing: 'easeInOutSine',
@@ -52,16 +54,10 @@ class PageOne extends Component {
 
     render() {
         if (typeof window !== 'undefined') {
-            jQuery.extend(jQuery.easing, {
-                easeOutQuart: function (x, t, b, c, d) {
-                  return -c * ((t = t / d - 1) * t * t * t - 1) + b;
-                }
-            });
-
             $(window).on('load scroll', () => {
                 let sc = $(window).scrollTop();
                 $('#ib').css({
-                    'transform': 'translateY(' + sc / 8 + 'px)'
+                    'transform': 'translateY(' + sc / 9 + 'px)'
                   });
             });
 

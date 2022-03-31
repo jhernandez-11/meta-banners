@@ -1,0 +1,13 @@
+.pageSix {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, .6);
+    z-index: 1;
+
+    &__imgCont {
+        position: absolute;
+        bottom: 3rem;
+        left: 3rem;
+    }
+}

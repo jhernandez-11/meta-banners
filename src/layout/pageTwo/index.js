@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { SwiperSlide } from "swiper/react";
 import Swiper from '../../components/UI/swiper';
 
-const banners = ['/cartwheel-pixel-galaxy.png', '/dark-pixel-galaxy.png', '/firework-pixel-galaxy.png', '/frontier-pixel-galaxy.png', '/main-pixel-galaxy.png']
+const banners = ['/cartwheel-pixel-galaxy.png', '/dark-pixel-galaxy.png', '/firework-pixel-galaxy.png', '/frontier-pixel-galaxy.png', '/main-pixel-galaxy.png', '/witch_pixel_galaxy.png']
 
 const pageTwo = (props) => {
     const elements = []
