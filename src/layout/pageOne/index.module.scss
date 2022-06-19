@@ -28,6 +28,12 @@
         border-radius: 1rem;
         text-transform: capitalize;
         width: min-content;
+
+        & p {
+            @include respond(phone) {
+                font-size: $font-size-medium;
+            }
+        }
     }
 
     &__info {

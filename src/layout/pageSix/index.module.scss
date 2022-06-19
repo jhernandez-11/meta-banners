@@ -1,13 +1,35 @@
 .pageSix {
     position: relative;
     width: 100vw;
-    height: 100vh;
-    background-color: rgba($color-black, .6);
+    height: 75vh;
+    background-color: rgba($color-p-d, 1);
     z-index: 1;
+    align-self: end;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
 
-    &__imgCont {
-        position: absolute;
-        bottom: 3rem;
-        left: 3rem;
+    .footer {
+        margin: 1.5rem 3rem;
+
+        & a:hover {
+            color: $color-s-d;
+            transition: $transition;
+        }
+    }
+
+    & p {
+        color: $color-white;
+        font-size: $font-size-2xlarge;
+        font-family: $font-family-san;
+        margin: 6rem 3rem;
+        @include gradient-text;
+        @include respond(phone) {
+            font-size: $font-size-xlarge;
+        }
+    }
+
+    & h1 {
+        color: $color-white;
+        font-size: $font-size-large;
+        font-weight: 600;
     }
 }

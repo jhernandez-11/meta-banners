@@ -29,7 +29,11 @@
         font-size: $font-size-2xlarge;
         font-weight: 700;
         
-        margin: 3rem 0;
+        margin: 3rem 1.5rem;
+
+        @include respond(phone) {
+            font-size: $font-size-xlarge;
+        }
     }
 
     &__banners {
@@ -43,6 +47,7 @@
 
         font-size: $font-size-medium;
         color: $color-white;
+        margin-left: 1.5rem;
 
         & p {
             margin-left: 1.5rem;
